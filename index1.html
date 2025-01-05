@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persönlicher Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            background: #6c5ce7;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            background: #6c5ce7;
+            padding: 10px 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            background: #2d3436;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Willkommen auf meinem persönlichen Blog</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#welcome">Über mich</a></li>
+            <li><a href="#favorites">Lieblingsserien</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+    
+    <section id="welcome">
+        <h2>Hallo, ich bin Ekaterine</h2>
+        <p>Willkommen auf meinem persönlichen Blog! Tauche ein in die Welten voller Abenteuer, Drama und Fantasie – hier teile ich meine Leidenschaft für spannende Geschichten und unvergessliche Charaktere.</p>
+    </section>
+    
+    <section id="favorites">
+        <h2>Meine Lieblingsserien</h2>
+        <ul>
+            <li><a href="https://www.netflix.com/title/80018499"><i class="fas fa-tv"></i> Stranger Things</a> – Ein spannendes Abenteuer voller Mystery und übernatürlicher Elemente.</li>
+            <li><a href="https://www.netflix.com/title/80027281"><i class="fas fa-dragon"></i> The Witcher</a> – Eine epische Fantasiewelt voller Monster und Magie.</li>
+            <li><a href="https://www.netflix.com/title/81007829"><i class="fas fa-gamepad"></i> Squid Game</a> – Ein packendes Thriller-Drama über Überleben und Menschlichkeit.</li>
+            <li><a href="https://www.netflix.com/title/80100172"><i class="fas fa-heart"></i> Bridgerton</a> – Eine romantische Geschichte im historischen England.</li>
+            <li><a href="https://www.netflix.com/title/80189098"><i class="fas fa-moon"></i> Wednesday</a> – Eine dunkle Komödie, die sich um die Tochter der Addams Family dreht.</li>
+        </ul>
+        <p>Ich schaue immer nach neuen Serien, also lass mich wissen, welche deine Favoriten sind!</p>
+    </section>
+    
+    <footer>
+        <p>&copy; <span id="currentYear"></span> E.Hahna. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
