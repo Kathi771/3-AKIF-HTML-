@@ -1,0 +1,93 @@
+:root {
+    --pulse-color-page-background: #afa;
+    --pulse-color-card-background: #d6dae5;
+    --pulse-color-faq-background: #fcfcfc;
+    --pulse-color-headings: #00ad6a;
+    --pulse-color-buttons: #1fe374;
+    --pulse-color-dark: #080c16;
+}
+
+body {
+    color: var(--pulse-color-dark);
+    background: var(--pulse-color-page-background);
+}
+
+/* change the background color */
+.navbar-custom {
+    color: #fcfcfc;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: var(--pulse-color-headings);
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: var(--pulse-color-headings);
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: var(--pulse-color-dark);
+}
+
+center {
+    padding-top: 3rem;
+}
+
+.cards {
+    padding-top: 5rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+h4 {
+   color: var(--pulse-color-headings) 
+}
+.card1 {
+    width: 18rem;
+    padding-top: 8rem;
+}
+
+.card2 {
+    border: black solid;
+    border-radius: 0.5rem;
+}
+
+.card2-header {
+    text-align: center;
+    background-color: var(--pulse-color-buttons);
+}
+
+.card3 {
+    border: black solid;
+}
+.header-card3 {
+    background-color:rgb(229, 228, 228);
+    border-bottom: rgb(79, 76, 76) solid;
+    border-width: 1px;
+}
+
+.avatar {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+.subvert-txt {
+    font-size: small;
+    color: var(--pulse-color-headings);
+}
+section {
+    background-color: white;
+}
+
+footer {
+    background-color: black;
+}
