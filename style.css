@@ -1,0 +1,328 @@
+.navbar {
+    display: flex;
+    align-items:center;
+    padding: 30px;
+}
+
+.nav-item {
+    margin-left: 50px;
+    display: flex;
+    align-items:center;
+    color: #00ad6a;
+}
+
+.nav-link {
+    color:#00ad6a;
+    font-weight: bolder;
+}
+
+.navbar-nav {
+    background-color: #eafaf1;
+    display: flex;
+    align-self:center;
+}
+
+#pulse_logo {
+    height: auto;
+    width: 220px;
+    padding-left: 90px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#customButton {
+   background-color:#eafaf1;
+   border: 2px solid #00ad6a;
+   color:#00ad6a;
+   padding: 8px 16px;
+   font-weight: bold;
+}
+
+#bold_heading {
+    text-align:center;
+    font-weight: 900;
+    font-size: 50px;
+    color: black;
+}
+
+center {
+    padding-bottom: 60px;
+}
+
+header {
+    background-color: #eafaf1;
+    padding-bottom: 90px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.card1 {
+    background-color: #eafaf1;
+    text-align: start;
+    width: 350px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+
+.card1 ul{
+    list-style-type: disc;
+    margin-left: 0;
+    padding-left: 12px;
+    text-align: left;
+}
+
+.card2 {
+    background-color:#fcfcfc;
+    text-align:start;
+    width: 350px;
+    height: 600px;
+    border: 2px solid #00ad6a;
+    border-radius: 10px;
+}
+
+.card2 ul li::before {
+    content:"\2714";
+    padding-right: 10px;
+    color: #00ad6a;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.card2 ul{
+    margin-left: -10px;
+    padding: 20px;
+}
+
+.card2 li{
+    margin-bottom: 15px;
+    text-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+.card3 {
+    background-color: #fcfcfc;
+    display: flex;
+    width: 350px;
+    height: 500px;
+    border: 1px solid #c2c2c9de;
+}
+
+.card3 ul li::before {
+    content:"\2714";
+    padding-right: 10px;
+    color: #00ad6a;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.card3 ul{
+    margin-left: -25px;
+    padding-right: 15px;
+}
+
+.card3 li{
+    margin-bottom: 15px;
+    text-wrap: wrap;
+    width: 340px;
+    display:flex;
+    align-items: flex-start;
+    gap:10px;
+}
+
+h4 {
+    color: #00ad6a;
+    text-align:start;
+}
+
+#recommended_green {
+    display: flex;
+    background-color:#00ad6a;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+    width: 100%;
+    padding: 3px;
+    flex-grow: 1;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.container {      
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+}
+
+h1{
+    color: #00ad6a;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 1000;
+    text-align: center;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#greyPrice{
+    color: #767679;
+    font-size: 20px;
+    text-align: center;
+}
+
+#greenButton{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #1fe374;
+    font-weight: bolder;
+    font-size:18px;
+    border: #1fe374;
+    width: 175px;
+    height: 45px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#boldSmall{
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 25px;
+}
+
+#greyText{
+    background-color: #f1f2f5fa;
+    color: #767679;
+    border: 0.8px solid #c2c2c9de;
+    display: flex;
+    text-align: center;
+    padding: 15px;
+    flex-grow: 1;
+}
+
+#thinGreen{
+    font-weight: normal;
+    font-size:33px;
+}
+
+.endLogoContainer{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;  
+}
+
+#subvert_logo{
+    height: 100px;
+    width: auto;
+}
+
+#quote_logo{
+    font-size: 23px;
+    text-align: center;
+}
+
+#subvert_marketing{
+    color: #00ad6a;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+h8{
+    color: #080c16;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: start;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content:start;
+}
+
+.wrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    text-align:start;
+}
+
+.content{
+   width: 50%;
+   padding-right: 30px;
+   box-sizing: border-box;
+   margin-bottom: 20px;
+}
+
+
+footer{
+    background-color: #080c16;
+    display: flex;
+    justify-content: space-between;
+}
+
+#pulse_logo2{
+    height: auto;
+    width: 375px;
+    padding-left: 150px;
+}
+
+#last_button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #1fe374;
+    font-weight: bolder;
+    font-size:14px;
+    border: #1fe374;
+    width: 300px;
+    height: 45px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+
+.row{
+    display: flex;
+    justify-content: space-around;
+    max-width: 1400px;
+    margin: 0;
+    padding: 60px 50px;
+}
+
+h6{
+    color: #fcfcfc;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.foot_item{
+    color: #1fe374;
+}
