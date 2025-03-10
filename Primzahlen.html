@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primzahlenprüfer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #output {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primzahlenprüfer</h1>
+    <p>Gib eine Zahl ein, um zu prüfen, ob sie eine Primzahl ist:</p>
+    <input type="number" id="numberInput">
+    <button onclick="checkPrime()">Prüfen</button>
+    <p id="output"></p>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+
+    
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function checkPrime() {
+            let num = document.getElementById("numberInput").value;
+            let output = document.getElementById("output");
+
+            if (num === "") {
+                output.textContent = "Bitte eine Zahl eingeben!";
+                output.style.color = "black";
+                return;
+            }
+
+            num = parseInt(num);
+            if (isPrime(num)) {
+                output.textContent = num + " ist eine Primzahl!";
+                output.style.color = "green";
+            } else {
+                output.textContent = num + " ist keine Primzahl!";
+                output.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
