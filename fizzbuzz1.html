@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzzWhizzBang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .output-line {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>FizzBuzzWhizzBang</h1>
+    <div id="output"></div>
+
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        function getFizzBuzzWord(n) {
+            let word = "";
+            if (n % 3 === 0) word += "Fizz";
+            if (n % 5 === 0) word += "Buzz";
+            if (n % 7 === 0) word += "Whizz";
+            if (n % 11 === 0) word += "Bang";
+            return word || n;
+        }
+
+        let i = 1;
+        while (true) {
+            const result = getFizzBuzzWord(i);
+            const line = document.createElement("div");
+            line.className = "output-line";
+            line.textContent = result;
+            outputDiv.appendChild(line);
+
+            if (result === "FizzBuzzWhizzBang") break;
+            i++;
+        }
+    </script>
+</body>
+</html>
