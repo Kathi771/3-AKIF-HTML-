@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "name": "Attach",
+        "port": 9229,
+        "request": "attach",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Backend",
+      "program": "${workspaceFolder}/backend.js",
+      "console": "integratedTerminal"
+    }
+  ]
+}
+
+c:\Users\ekate_1172mcv\OneDrive\Desktop\Bilder\Screenshots\Screenshot 2025-05-10 002443.png
+c:\Users\ekate_1172mcv\OneDrive\Desktop\Bilder\Screenshots\Screenshot 2025-05-10 002443.png
+c:\Users\ekate_1172mcv\OneDrive\Desktop\Bilder\Screenshots\Screenshot 2025-05-10 002443.png
+c:\Users\ekate_1172mcv\OneDrive\Desktop\Bilder\Screenshots\Screenshot 2025-05-10 003722.png
+c:\Users\ekate_1172mcv\OneDrive\Desktop\Bilder\Screenshots\Screenshot 2025-05-10 003703.png
+c:\Users\ekate_1172mcv\OneDrive\Desktop\Bilder\Screenshots\Screenshot 2025-05-10 002504.png

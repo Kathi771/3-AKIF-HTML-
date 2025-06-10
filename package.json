@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "primzahlen",
   "version": "1.0.0",
   "main": "index.js",
@@ -10,5 +11,28 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.2"
+=======
+  "name": "fizzbuzzb.html",
+  "version": "1.0.0",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kathi771/3-AKIF-HTML-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kathi771/3-AKIF-HTML-/issues"
+  },
+  "homepage": "https://github.com/Kathi771/3-AKIF-HTML-#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+>>>>>>> master
   }
 }

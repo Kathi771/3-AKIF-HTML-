@@ -1,0 +1,18 @@
+# Windows System files
+AppData/
+Thumbs.db
+Desktop.ini
+
+# Node modules (wenn du welche hast)
+node_modules/
+
+# VSCode Einstellungen
+.vscode/
+
+# Log- und Cache-Dateien
+*.log
+*.cache
+
+# Andere temporäre Dateien
+*.tmp
+*.bak
