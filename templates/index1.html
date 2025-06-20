@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+        h1 { color: #333; text-align: center; }
+        form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+        input[type="file"] { border: 1px solid #ddd; padding: 8px; border-radius: 4px; }
+        input[type="number"] { border: 1px solid #ddd; padding: 8px; border-radius: 4px; width: 100px; } /* Small adjustment for number inputs */
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease; }
+        button:hover { background-color: #0056b3; }
+        #output { margin-top: 20px; padding: 15px; border: 1px solid #eee; border-radius: 4px; background-color: #e9ecef; }
+        #output p { margin: 5px 0; }
+        .error-message { color: red; font-weight: bold; }
+        .flex-row { display: flex; gap: 20px; justify-content: space-between; align-items: center;} /* New style for node inputs */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Graph Analysis</h1>
+        <form id="uploadForm">
+            <label for="fileInput">Select a CSV or JSON file:</label>
+            <input type="file" id="fileInput" name="file" accept=".csv,.json" />
+            
+            <div class="flex-row">
+                <label for="startNode">Start Node Index:</label>
+                <input type="number" id="startNode" name="start_node" value="0" min="0" required />
+            </div>
+            <div class="flex-row">
+                <label for="endNode">End Node Index:</label>
+                <input type="number" id="endNode" name="end_node" value="1" min="0" required />
+            </div>
+
+            <button type="submit">Analyze</button>
+        </form>
+
+        <div id="output">
+            <p>Results will be displayed here...</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const outputDiv = document.getElementById('output');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            outputDiv.innerHTML = '<p>Analyzing file...</p>';
+
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            const startNode = document.getElementById('startNode').value;
+            const endNode = document.getElementById('endNode').value;
+
+            if (!file) {
+                outputDiv.innerHTML = '<p class="error-message">Please select a file!</p>';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('start_node', startNode);
+            formData.append('end_node', endNode);
+
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    outputDiv.innerHTML = `<p class="error-message">Server Error: ${errorData.error || 'Unknown server error'}</p>`;
+                    return;
+                }
+
+                const result = await response.json();
+
+                if (!result.success) {
+                    outputDiv.innerHTML = `<p class="error-message">Error: ${result.error}</p>`;
+                    return;
+                }
+
+                // Display the results and the graph image
+                outputDiv.innerHTML = `
+                    <h2>Analysis Results:</h2>
+                    <p><strong>Radius:</strong> ${result.results.radius}</p>
+                    <p><strong>Diameter:</strong> ${result.results.diameter}</p>
+                    <p><strong>Center:</strong> ${result.results.center_nodes.length > 0 ? result.results.center_nodes.join(', ') : 'Not defined (graph not connected)'}</p>
+                    <p><strong>Eccentricities:</strong> ${result.results.eccentricities.join('<br>')}</p> 
+                    
+                    <h3>Shortest Path from Node ${result.results.shortest_path_formatted ? result.results.shortest_path_formatted.split(' -> ')[0] : startNode} to Node ${result.results.shortest_path_formatted ? result.results.shortest_path_formatted.split(' -> ').slice(-1)[0] : endNode}:</h3>
+                    ${result.results.shortest_path_formatted ? `
+                        <p><strong>Distance:</strong> ${result.results.shortest_path_distance}</p>
+                        <p><strong>Path:</strong> ${result.results.shortest_path_formatted}</p>
+                    ` : `<p>No path found from Node ${startNode} to Node ${endNode} or graph is not connected.</p>`}
+                    
+                    <h3>Graph Visualization:</h3>
+                    ${result.results.graph_image ? `<img src="${result.results.graph_image}" alt="Graph Visualization" style="max-width:100%; height:auto;">` : '<p>No graph image available.</p>'}
+                `;
+            } catch (err) {
+                outputDiv.innerHTML = `<p class="error-message">Error connecting to server or unknown error: ${err.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

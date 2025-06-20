@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyd
+*.so
+
+# Environments
+.Python/
+env/
+venv/
+.env
+.flaskenv
+
+
+.Python
+.eggs/
+*.egg
+*.egg-info/
+dist/
+build/
+wheels/
+
+
+*.log
+*.sqlite3
+*.db
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+.vscode/ 
+
+
+uploads/
+
+
+node_modules/
+
+# Jupyter Notebook / IPython
+.ipynb_checkpoints
+
